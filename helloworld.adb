@@ -5,18 +5,6 @@ use Ada.Calendar;
 with Ada.Numerics.Float_Random;
 use Ada.Numerics.Float_Random;
 
---  procedure F1 is
---     -- smth
---  begin
---  end F1;
-
---  procedure F2 is
---     --smth
---   begin
---   end F2;
- 
- 
-
 procedure Helloworld is
    procedure F1(D: in Duration) is
    begin
@@ -42,20 +30,11 @@ procedure Helloworld is
      
    end F3;
    
-   --  task Watchdog is
-   --     null;
-   --  end Watchdog;
-   
-   --  task body Watchdog is
-   --  begin     
-   --     null;
-   --  end Watchdog;
-   
-    --0.5 2.5 4.5 6.5
    Epoch : constant Time := Clock;
    Next_Time : Time := Clock +  0.5;
    D : Duration;
    Counter : Integer := 0;
+   
 begin 
    loop
       D := Seconds(Clock) - Seconds(Epoch);
@@ -71,11 +50,7 @@ begin
       delay until (Next_Time);
       Next_Time := Next_Time + 0.5;
       Counter := Counter +1;
-      D := Seconds(Clock) - Seconds(Epoch);
-      
+      D := Seconds(Clock) - Seconds(Epoch);     
    end loop;
    
-      
-     
-
 end Helloworld;
